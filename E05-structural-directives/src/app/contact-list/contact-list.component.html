@@ -1,0 +1,29 @@
+
+<button (click)="showContacts()">Mostrar todo</button>
+
+<table [ngStyle]= "{visibility: table}">
+  <tr *ngFor="let c of service.contacts">
+    <td>
+      {{c.nombre}}
+    </td>
+    <td>
+      {{c.apellidos}}
+    </td>
+    <td>
+      {{c.telefono}}
+    </td>
+    <td>
+      <button (click)="service.deleteContact(c.telefono)">Borrar</button>
+    </td>
+  </tr>
+</table>
+
+<input [(ngModel)]="telephoneDelete" />
+<button (click)="service.deleteContact(telephoneDelete)">Delete User by number</button>
+<br>
+<input [(ngModel)]="name" placeholder="Nombre" />
+<input [(ngModel)]="surname"  placeholder="Apellidos"/>
+<input [(ngModel)]="telephone" placeholder="Telefono"/>
+
+<button (click)="service.addContact()">Añadir User</button>
+
