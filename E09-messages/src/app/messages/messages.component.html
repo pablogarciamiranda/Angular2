@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let message of service.findAll()">
+    <a routerLink="/messages/{{message.id}}"> {{message.title}}</a>
+    </li>
+</ul>

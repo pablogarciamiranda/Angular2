@@ -1,22 +1,12 @@
 <p>
   List of users
 </p>
-<table>
-  <tr *ngFor="let c of service.users">
-    <td>
-      {{c.firstname}}
-    </td>
-    <td>
-      {{c.surname}}
-    </td>
-    <td>
-      {{c.email}}
-    </td>
-    <td>
-      {{c.phone}}
-    </td>
-    <td>
-      {{c.imgUrl}}
-    </td>
-  </tr>
-</table>
+
+<div *ngFor="let user of users">
+  <p><span><strong>Nombre</strong>:</span> {{user.firstname}}</p>
+  <p><span><strong>Apellidos</strong>:</span> {{user.lastname}}</p>
+  <p><span><strong>E-mail</strong>:</span> {{user.email}}</p>
+  <p><span><strong>Teléfono</strong>:</span> {{user.phone}}</p>
+  <img src="{{user.imgUrl}}" width=30 height=30 />
+  <hr/>
+</div>
